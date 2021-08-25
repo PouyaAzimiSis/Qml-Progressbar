@@ -38,7 +38,37 @@ C_Spinner {
 
             }
         }
+        
+        function cmyk2rgb(c, m, y, k){
+        c = (c / 100);
+        m = (m / 100);
+        y = (y / 100);
+        k = (k / 100);
 
+        c = c * (1 - k) + k;
+        m = m * (1 - k) + k;
+        y = y * (1 - k) + k;
+
+        var r = 1 - c;
+        var g = 1 - m;
+        var b = 1 - y;
+
+        if(true){
+            r = Math.round(255 * r);
+            g = Math.round(255 * g);
+            b = Math.round(255 * b);
+        }
+        r = toHex(r)
+        g = toHex(g)
+        b =  toHex(b)
+
+
+
+        let answer = "#"+ r + g + b
+        console.log(answer)
+        return answer
+
+        }
 
 
     }
